@@ -4,8 +4,8 @@
 using namespace std;
 int main ()
 {
-	float a,b,c, delta;
-	int x1,x2,X0k;
+	float a,b,c,delta;
+	float x1,x2,X0l,X0k;
 	
 	cout << "Podaj wspolczynniki funkcji kwadratowej: " << endl;
 	cout << "a = ";
@@ -19,6 +19,14 @@ int main ()
 	if (a==0 & b==0)
 	{
 	   cout << "Brak miejsc zerowych." << endl;
+	   return 0;
+	}
+	
+	if (a==0)
+	{
+	   X0l = ((-c)/b);
+	   cout << "To nie jest funkcja kwadratowa, tylko liniowa." << endl;
+	   cout << "Miejsce zerowe funkcji wynosi: " << X0l << endl;
 	   return 0;
 	}
 	
