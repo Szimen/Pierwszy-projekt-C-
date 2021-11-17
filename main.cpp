@@ -3,6 +3,25 @@
 
 using namespace std;
 
+void liniowa(float a, float b, float X0)
+{
+	if (a==0)
+	{
+	 cout << "Nie istnieje miejsce zerowe funkcji." << endl;
+	 return;
+	}
+	
+	if (b==0)
+	{ 
+	 cout << "Funkcja ma nieskonczenie wiele miejsc zerowych." << endl;
+	 return;
+	}
+	   
+	X0 = ((-b)/a);
+	cout << "Miejsce zerowe funkcji wynosi: " <<X0<< endl;
+	return;
+}
+
 void zamien_na_kanoniczne(float a, float p, float q, float& b, float& c)
 {
     b = (-a*p*2);
@@ -54,12 +73,24 @@ void oblicz_ogolna(float a, float b, float c)
 int main ()
 {
     int wybor;
-    cout<<"Wybor postaci funkcji kwadratowej!!"<<endl;
-    cout<<"1. Postac ogolna "<<endl;
-    cout<<"2. Postac kanoniczna"<<endl;
+    cout<<"Wybor postaci funkcji !!"<<endl;
+    cout<<"1. Funkcja liniowa "<<endl;
+    cout<<"2. Funkcja kwadratowa - Postac ogolna "<<endl;
+    cout<<"3. Funkcja kwadratowa - Postac kanoniczna"<<endl;
     cin>>wybor;
-
+    
     if(wybor == 1)
+    {
+    	float a,b,X0;
+    	cout << "Wpisz wartosc wspolczynnika kierunkowego a: " << endl;
+	    cin >> a;
+	    cout << "Wpisz wartosc wyrazu wolnego funkcji: " << endl;
+	    cin >> b;
+	    cout << endl;
+	    liniowa(a,b,X0); //funkcja licz¹ca miejsca zerowe
+	}
+
+    if(wybor == 2)
     {
 	float a,b,c;
 
@@ -73,7 +104,8 @@ int main ()
 	cout <<endl;
 	oblicz_ogolna(a,b,c); //funkcja liczaca miejsca zerowe
     }
-    if(wybor == 2)
+    
+    if(wybor == 3)
     {
         float a,b,c,p,q;
 			cout<<"Miejsca zerowe funkcji kwadratowej w postaci kanonicznej y=a(x-p)^2+q" << endl;
